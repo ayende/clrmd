@@ -227,7 +227,7 @@ namespace Microsoft.Diagnostics.Runtime.Linux
                 ulong ret = ptrace(PTRACE_GETREGS, (int) threadID, IntPtr.Zero, ptr);
                 if (ret != 0)
                 {
-                    Console.WriteLine($"PTRACE_GETREGS returns {ret:x} for {threadID}");
+                    //Console.WriteLine($"PTRACE_GETREGS returns {ret:x} for {threadID}");
                 }
                 RegSetX64 r = Marshal.PtrToStructure<RegSetX64>(ptr);
                 CopyContext(ctx, ref r);
@@ -255,7 +255,7 @@ namespace Microsoft.Diagnostics.Runtime.Linux
                 ulong ret = ptrace(PTRACE_GETREGS, (int)threadID, IntPtr.Zero, ptr);
                 if (ret != 0)
                 {
-                    Console.WriteLine($"PTRACE_GETREGS returns {ret:x} for {threadID}");
+                    //Console.WriteLine($"PTRACE_GETREGS returns {ret:x} for {threadID}");
                 }
                 RegSetX64 r = Marshal.PtrToStructure<RegSetX64>(ptr);
                 CopyContext(ctx, ref r);
